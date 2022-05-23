@@ -1,0 +1,75 @@
+<!--
+ * @Author: chengming 531808375@qq.com
+ * @Date: 2022-05-20 22:42:41
+ * @LastEditors: chengming 531808375@qq.com
+ * @LastEditTime: 2022-05-21 15:52:49
+ * @FilePath: \cssday9\test.html
+ * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 引入初始化样式文件 -->
+    <link rel="stylesheet" href="./shopping/css/base.css">
+
+    <link rel="stylesheet" href="./shopping/css/register.css">
+    <style>
+        .dl {
+
+
+            margin-top: 50px;
+            font-size: 20px;
+            font-weight: 700;
+            color: red;
+        }
+
+        .rf {
+            border: 2px solid red;
+            border-radius: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="reg_form rf" style="width: 500px;">
+        <form action="">
+            <ul style="text-align: center;  padding-right: 30px;">
+                <li><label for="" class="dl">登录</label></li>
+                <li>
+                    <label for="">账号:</label>
+                    <input type="text" class="inp">
+
+                </li>
+                <li>
+                    <label for="">密码:</label>
+                    <input type="password" class="inp">
+
+                </li>
+                <li class="safe"> <img src="./yzm.png" style="height: 40px;" alt="">
+                    <a href="" style="color: blue; font-size:10px;margin-right: 30px;">看不清？换一张</a>
+                </li>
+                <li>
+                    <label for="">验证码:</label>
+                    <input type="text" class="inp">
+
+                </li>
+                <li class="agree">
+                    <input type="checkbox">
+                    同意协议并登录
+                    <a href="">《知晓用户协议》</a>
+                </li>
+                <li>
+                    <input type="submit" value="登录" class="btn" title="登录">
+                </li>
+                <li style="color: red; text-align:center;">验证码错误</li>
+            </ul>
+        </form>
+    </div>
+</body>
+
+</html>
