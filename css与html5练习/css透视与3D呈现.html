@@ -1,0 +1,440 @@
+<!--
+ * @Author: chengming 531808375@qq.com
+ * @Date: 2022-05-12 20:15:04
+ * @LastEditors: chengming 531808375@qq.com
+ * @LastEditTime: 2022-05-23 17:30:06
+ * @FilePath: \work1\cssday10\test2.html
+ * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D动画 透视和3D呈现,3D案例，魔方，旋转木马</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* z轴移动单位一般用px，向外为正 */
+        .box {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            margin: 0 auto;
+            /* transform: translate3d(400px, 100px, 100px); */
+            animation: w 3s infinite alternate;
+        }
+
+        @keyframes w {
+            0% {
+                transform: rotate3d(1, 1, 0, 45deg);
+            }
+
+            100% {
+                transform: rotate3d(1, 1, 0, -45deg);
+            }
+        }
+
+        /* 3D需要透视才能观察，透视写到父盒子上  写了透视有近大远小效果*/
+        body {
+            /* perspective: 200px; */
+        }
+
+        img {
+            width: 100%;
+        }
+
+        /* 3D呈现transform-style */
+        .box1 {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            margin: 100px auto;
+            /* perspective: 200px; */
+            transition: all 2s;
+            /* 让子元素开启3D立体效果 */
+            transform-style: preserve-3d;
+        }
+
+        .box1:hover {
+            transform: rotateY(60deg);
+        }
+
+        .box2 {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: pink;
+        }
+
+        .box3 {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: purple;
+            transform: rotateX(60deg);
+        }
+
+        /* 3D案例 */
+        .box4 {
+            position: relative;
+            width: 300px;
+            height: 300px;
+            margin: 100px auto;
+            transition: all 2s;
+            /* 让子元素开启3D立体效果 */
+            transform-style: preserve-3d;
+        }
+
+        .box4:hover {
+            transform: rotateY(180deg);
+        }
+
+        .front,
+        .back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            border-radius: 50%;
+            font-size: 30px;
+            color: #fff;
+            text-align: center;
+            line-height: 300px;
+            /* backface-visibility 属性定义当元素不面向屏幕时是否可见。 */
+            backface-visibility: hidden;
+        }
+
+        .front {
+            background-color: pink;
+            z-index: 1;
+        }
+
+        .back {
+            background-color: purple;
+            transform: rotateY(180deg);
+
+        }
+
+        /* 3D导航栏 */
+        .box5 {
+            position: relative;
+            width: 150px;
+            height: 30px;
+            margin: 100px auto;
+            transform-style: preserve-3d;
+            transition: all 1s;
+        }
+
+        .box5:hover {
+            transform: rotateX(90deg);
+        }
+
+        .box6,
+        .box7 {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            font-size: 20px;
+            line-height: 30px;
+        }
+
+        .box6 {
+            background-color: pink;
+            transform: translateZ(15px);
+        }
+
+        .box7 {
+            background-color: purple;
+            transform: translateY(15px) rotateX(-90deg);
+        }
+
+        /* 魔方 */
+        @keyframes move {
+            0% {}
+
+            100% {
+                transform: rotateX(360deg) rotateY(180deg);
+            }
+        }
+
+        .mo-fang {
+            position: relative;
+            margin: 200px auto;
+            width: 150px;
+            height: 150px;
+            transform-style: preserve-3d;
+            transition: all 3s linear;
+            /* 调用动画
+            animation-name: move;
+             持续时间 
+            animation-duration: 3s;
+             速度曲线默认是ease 
+            animation-timing-function: ease;
+             动画何时开始默认是0 
+            animation-delay: 0;
+             动画播放次数默认是1  infinite无限重复 
+            animation-iteration-count: infinite;
+             是否反向播放默认norma了，反向播放alternate;
+            animation-direction: alternate;
+             规定动画是否在运行或停下来 
+            animation-play-state: running;
+             动画结束后回到初始backwords 或停在结束forwards 
+             animation-fill-mode: forwards; */
+            animation: move;
+            animation-duration: 4s;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+
+        }
+
+        /* .mo-fang:hover {
+            transform: rotateY(360deg) rotateX(270deg);
+        } */
+        /* 魔方 */
+        .m {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 150px;
+            height: 150px;
+        }
+
+        .m li {
+            float: left;
+            width: 50px;
+            height: 50px;
+            list-style: none;
+            box-sizing: border-box;
+            border: 1px solid black;
+
+        }
+
+        .color1 li {
+            background-color: pink;
+        }
+
+        .color2 {
+            transform: translateZ(-150px);
+        }
+
+        .color2 li {
+            background-color: aqua;
+
+        }
+
+        .color3 {
+            transform-origin: left;
+            transform: rotateY(90deg);
+        }
+
+        .color3 li {
+            background-color: blue;
+
+        }
+
+        .color4 {
+            transform-origin: right;
+            transform: rotateY(-90deg);
+        }
+
+        .color4 li {
+            background-color: blueviolet;
+
+        }
+
+        .color5 {
+            transform-origin: top;
+            transform: rotateX(-90deg);
+        }
+
+        .color5 li {
+            background-color: brown;
+
+        }
+
+        .color6 {
+            transform-origin: bottom;
+            transform: rotateX(90deg);
+        }
+
+        .color6 li {
+            background-color: chartreuse;
+
+        }
+
+        /* 旋转木马 */
+        section {
+            position: relative;
+            width: 165px;
+            height: 145px;
+            margin: 100px auto;
+            transform-style: preserve-3d;
+            /* perspective: 800px; */
+            /* 添加动画 */
+            animation: rotate 5s linear infinite;
+        }
+
+        @keyframes rotate {
+            0% {
+                transform: rotateY(0);
+            }
+
+            100% {
+                transform: rotateY(360deg);
+            }
+        }
+
+        section div {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background: url(images/pvp.png) no-repeat;
+        }
+
+        section div:nth-child(1) {
+            transform: translateZ(300px);
+        }
+
+        section div:nth-child(2) {
+            transform: rotateY(60deg) translateZ(300px);
+        }
+
+        section div:nth-child(3) {
+            transform: rotateY(120deg) translateZ(300px);
+        }
+
+        section div:nth-child(4) {
+            transform: rotateY(180deg) translateZ(300px);
+        }
+
+        section div:nth-child(5) {
+            transform: rotateY(240deg) translateZ(300px);
+        }
+
+        section div:nth-child(6) {
+            transform: rotateY(300deg) translateZ(300px);
+        }
+    </style>
+</head>
+
+<body style="height: 4000px;">
+    <div class="box"><img src="images/wx_cz.jpg" alt=""></div>
+
+    <div class="box1">
+        <div class="box2"></div>
+        <div class="box3"></div>
+    </div>
+
+    <!-- 3D案例 -->
+    <div class="box4">
+        <div class="front">黑马程序员</div>
+        <div class="back">我在这里等你</div>
+    </div>
+
+    <!-- 3D导航栏 -->
+    <div class="box5">
+        <div class="box6">黑马程序员</div>
+        <div class="box7">我在这里等你</div>
+    </div>
+
+    <!-- 魔方 -->
+    <div class="mo-fang">
+        <ul class="m color1">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+        <ul class="m color2">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+        <ul class="m color3">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+        <ul class="m color4">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+        <ul class="m color5">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+        <ul class="m color6">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+
+    <!-- 旋转木马 -->
+    <section>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </section>
+</body>
+
+</html>

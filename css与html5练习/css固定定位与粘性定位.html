@@ -1,0 +1,103 @@
+<!--
+ * @Author: your name
+ * @Date: 2022-04-10 20:41:49
+ * @LastEditTime: 2022-04-10 21:54:19
+ * @LastEditors: Please set LastEditors
+ * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @FilePath: \work1\cssday6\test.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>固定定位与粘性定位</title>
+    <style>
+        /* 固定定位 */
+        .daji {
+            position: fixed;
+            bottom: 100px;
+            left: 50%;
+            margin-left: 400px;
+        }
+
+        .box {
+            width: 800px;
+            height: 1000px;
+            background-color: pink;
+            margin: 0 auto;
+        }
+
+        /* 粘性定位 兼容性差，了解即可 */
+        body {
+
+            height: 3000px;
+        }
+
+        .nav {
+            z-index: 2;
+            position: sticky;
+            top: 100px;
+            width: 50px;
+            height: 50px;
+            background-color: blue;
+            margin: 50px auto;
+        }
+
+        /* 层叠次序 */
+        .box1 {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 200px;
+            height: 200px;
+        }
+
+        /* 绝对定位的水平垂直居中 */
+        .box2 {
+            position: absolute;
+            left: 50%;
+            margin-left: -100px;
+            /* top: 50%;
+            margin-top: -100px; */
+            width: 200px;
+            height: 200px;
+            background-color: aquamarine;
+
+        }
+
+        /* 浮动定位不会压住标准流文字，绝对定会会压住 */
+        .box3 {
+            float: left;
+            width: 200px;
+            height: 200px;
+            background-color: yellow;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="daji">
+        <img src="images/pvp.png" alt="">
+    </div>
+
+    <div class="box"></div>
+    <div class="nav"></div>
+    <!-- z-index控制先后顺序，数字越大越压在上方 叠放次序 只有定位格子有此属性 -->
+    <div class="box1" style="background-color: aquamarine; z-index: 1;"></div>
+    <div class="box1" style="background-color: black; left: 70px;"></div>
+    <div class="box1" style="background-color: blue; left: 50px;"></div>
+
+    <div class="box2">绝对定位居中的盒子 <br>
+        绝对定位（固定定位）不占用位置
+        <br>绝对定位（固定定位）会压住标准流所有内容
+    </div>
+
+    <div class="box3">浮动定位盒子只压住标准流盒子，不压住标准流盒子里的文字</div>
+    <p>标准流文字定位111111111111111111111111111111111111112222222222222，中间2被压住</p>
+
+</body>
+
+</html>

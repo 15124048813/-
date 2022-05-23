@@ -1,0 +1,191 @@
+<!--
+ * @Author: your name
+ * @Date: 2022-04-13 23:01:54
+ * @LastEditTime: 2022-04-14 22:59:41
+ * @LastEditors: Please set LastEditors
+ * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @FilePath: \work1\cssday7\test2.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>margin负值应用,文字围绕浮动元素，行内块巧妙应用，三角妙用</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+
+
+        ul li {
+            float: left;
+            list-style: none;
+            width: 150px;
+            height: 200px;
+            border: 1px solid red;
+            margin-left: -1px;
+        }
+
+        /* 重叠边框会被压住，想要改变被压住的盒子边框颜色，只需要提高该盒子的层级即可，通过定位或者z-index */
+        ul li:hover {
+            /* 盒子没有定位可以添加定位提高层级 ，如果都有定位则使用z-index调整*/
+            position: relative;
+            border: 1px solid blue;
+        }
+
+        /* 文字围绕浮动 */
+        .box1 {
+            width: 300px;
+            height: 70px;
+            background-color: yellow;
+            margin: 0 auto;
+            padding: 5px;
+        }
+
+        .pic {
+            float: left;
+            width: 120px;
+            height: 60px;
+            margin-right: 5px;
+        }
+
+        .pic img {
+            vertical-align: middle;
+            width: 100%;
+        }
+
+        /* 行内块妙用 */
+        .box2 {
+            text-align: center;
+        }
+
+        .box2 a {
+            display: inline-block;
+            width: 36px;
+            height: 36px;
+            background-color: #f7f7f7;
+            border: 1px solid #ccc;
+            text-align: center;
+            line-height: 36px;
+            text-decoration: none;
+            color: #333;
+
+        }
+
+        .box2 .current,
+        .box2 .elp {
+            background-color: #fff;
+            border: none;
+        }
+
+        .box2 input {
+            height: 36px;
+            width: 45px;
+            border: 1px solid #ccc;
+            outline: none;
+        }
+
+        .box2 button {
+            width: 60px;
+            height: 36px;
+            background-color: #f7f7f7;
+            border: 1px solid #ccc;
+        }
+
+        /* css三角妙用 */
+        .box3 {
+            width: 0;
+            height: 0;
+            border-top: 100px solid transparent;
+            border-right: 50px solid skyblue;
+            border-bottom: 0 solid;
+            border-left: 0 solid;
+            /* 同理 */
+            /* border-color: transparent red transparent transparent;
+            border-style: solid;
+            border-width:20px 10px 0 0 */
+        }
+
+        .price {
+            width: 160px;
+            height: 24px;
+            border: 1px solid red;
+            margin: 0 auto;
+            line-height: 24px;
+        }
+
+        .miaosha {
+            position: relative;
+            float: left;
+            width: 90px;
+            height: 100%;
+            background-color: red;
+            text-align: center;
+            color: #fff;
+            font-weight: 700;
+            margin-right: 8px;
+        }
+
+        .miaosha i {
+            position: absolute;
+            width: 0;
+            height: 0;
+            right: 0;
+            top: 0;
+            border-color: transparent #fff transparent transparent;
+            border-style: solid;
+            border-width: 24px 10px 0 0;
+
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <div>
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+        </ul>
+    </div> -->
+    <!-- 文字围绕浮动 -->
+    <div class="box1">
+        <div class="pic">
+            <img src="images/img.png" alt="">
+        </div>
+        <p> 发生神模式了为神魔不会换横,文字可以换横</p>
+    </div>
+    <!-- 行内块妙用 -->
+    <div class="box2">
+        <a href="" style="width: 100px;">&lt;&lt;上一页</a>
+        <a href="" class="current">1</a>
+        <a href="">2</a>
+        <a href="">3</a>
+        <a href="">4</a>
+        <a href="">5</a>
+        <a href="">6</a>
+        <a href="">7</a>
+        <a href="" class="elp">...</a>
+        <a href="" style="width: 100px">&gt;&gt;上一页</a>
+        到第<input type="text">页
+        <button>确定</button>
+    </div>
+
+    <div class="box3"></div>
+
+    <div class="price">
+        <span class="miaosha">￥1650
+            <i></i>
+        </span>
+        <span style="text-decoration: line-through;color: gray;">￥5650</span>
+    </div>
+</body>
+
+</html>

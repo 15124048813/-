@@ -1,0 +1,127 @@
+<!--
+ * @Author: your name
+ * @Date: 2022-04-17 21:55:21
+ * @LastEditTime: 2022-05-23 17:28:59
+ * @LastEditors: chengming 531808375@qq.com
+ * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @FilePath: \work1\cssday8\test3.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>border-box盒子模型,图片模糊 blur,css3过度效果</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            border: 20px solid red;
+            padding: 10px;
+            box-sizing: content-box;
+        }
+
+        p {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            border: 20px solid red;
+            padding: 10px;
+            /* css3盒子模型，通过border-box规定盒子宽度等于width，不会被撑开 */
+            box-sizing: border-box;
+        }
+
+        img {
+            /* blur是一个函数，数值越大越模糊 */
+            filter: blur(3px);
+        }
+
+        img:hover {
+            filter: blur(0);
+        }
+
+        /* css3 calc函数，让你在声明css3属性值时执行一些计算  */
+        .father {
+            width: 300px;
+            height: 200px;
+            background-color: pink;
+        }
+
+        .son {
+            /* 注意空格 */
+            width: calc(100% - 50px);
+            height: 30px;
+            background-color: skyblue;
+            margin: 0 auto;
+        }
+
+        /* css3新增过渡属性 */
+        .box1 {
+            width: 200px;
+            height: 200px;
+            background-color: royalblue;
+            /* transition: 变化属性 花费时间 运动曲线 何时开始; 多个属性变化用逗号隔开,使用all可以所有属性都变化，谁做过渡给谁加*/
+            /* transition: width 3s ease 1s, height 3s ease 1s; */
+            transition: all 3s ease 1s;
+        }
+
+        .box1:hover {
+            width: 400px;
+            height: 400px;
+            background-color: skyblue;
+        }
+
+        .bar {
+            width: 150px;
+            height: 20px;
+            border: 1px solid red;
+            border-radius: 10px;
+        }
+
+        .bar-in {
+            width: 50%;
+            height: 100%;
+            background-color: red;
+            transition: all 2s;
+            border-radius: 10px;
+        }
+
+        .bar:hover .bar-in {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body style="height: 2000px;">
+    <!-- border-box盒子 -->
+    <div class="box">不是200px</div>
+    <p>200px</p>
+
+    <!-- 图片模糊处理 -->
+    <img src="images/pink.jpg" alt="">
+
+    <!-- calc计算css3属性 -->
+    <div class="father">
+        <div class="son">
+            子盒子随着父盒子变化</div>
+    </div>
+
+    <!-- css3过渡属性 -->
+    <div class="box1">过渡盒子</div>
+
+    进度条
+    <div class="bar">
+        <div class="bar-in"></div>
+    </div>
+</body>
+
+</html>

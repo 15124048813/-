@@ -1,0 +1,105 @@
+<!--
+ * @Author: your name
+ * @Date: 2022-04-03 17:37:28
+ * @LastEditTime: 2022-04-13 20:13:39
+ * @LastEditors: Please set LastEditors
+ * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @FilePath: \work1\cssday3\test.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>盒子边距基础操作</title>
+    <style>
+        /* 清除内外边距 */
+        /* * {
+            margin: 0;
+            padding: 0;
+        } */
+
+        /* div {
+            width: 300px;
+            height: 200px;
+            border-width: 5px;
+            /* solid实线  dashed虚线  dotted点线 */
+        /* border-style: dotted;
+            border-color: pink;
+        } */
+        */ table {
+            height: 100px;
+            width: 250px;
+        }
+
+        table,
+        th {
+            border: 1px solid red;
+            /* 合并边框 */
+            border-collapse: collapse;
+            /* padding 四个值 上右下左 ， 三个值 上 左右 下 ，两个值 上下 左右 ，一个值 全部 */
+        }
+
+        .nav {
+            height: 41px;
+            border-top: 3px solid brown;
+            border-bottom: 1px solid deeppink;
+            line-height: 41px;
+
+        }
+
+        .nav a {
+            text-decoration: none;
+            font-size: 12px;
+            color: black;
+            display: inline-block;
+            height: 41px;
+            padding: 0 20px;
+        }
+
+        .nav a:hover {
+            background-color: blue;
+            color: orange;
+        }
+    </style>
+</head>
+
+<body>
+
+    <table align="center" cellspacing="0">
+        <thead>
+            <tr>
+                <th>排名</th>
+                <th>关键词</th>
+                <th>趋势</th>
+                <th>11</th>
+                <th>22</th>
+            </tr>
+        </thead>
+    </table>
+
+    <div class="nav">
+        <a href="">新浪</a>
+        <a href="">手机</a>
+        <a href="">移动客户端</a>
+        <a href="">12345</a>
+        <a href="">4566666</a>
+    </div>
+    <!-- 外边距 margin -->
+
+    <div style=" width: 200px; height: 200px; background-color: black;"></div>
+    <div style="margin-top: 20px; width: 200px; height: 200px; background-color: black;"></div>
+
+    <!-- 盒子居中auto -->
+    <div style="width: 900px; height: 200px ;margin: 0 auto; background-color: pink;"></div>
+
+    <!-- 嵌套块元素 -->
+    <div style="width: 400px; height: 400px; background-color: aqua; margin-top: 50px; border: 1px solid transparent;">
+        <div style="width: 200px; height: 200px; background-color: beige;margin-top: 50px;"></div>
+    </div>
+
+</body>
+
+</html>

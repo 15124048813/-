@@ -1,0 +1,77 @@
+<!--
+ * @Author: your name
+ * @Date: 2022-04-15 17:46:34
+ * @LastEditTime: 2022-04-17 20:18:16
+ * @LastEditors: Please set LastEditors
+ * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @FilePath: \work1\cssday8\test.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html5新增标签</title>
+    <style>
+        header,
+        nav {
+            height: 120px;
+            background-color: pink;
+            border-radius: 15px;
+            width: 800px;
+            margin: 15px auto;
+        }
+
+        video {
+            width: 100%;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        input::placeholder {
+            color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <header>头部标签</header>
+    <nav>导航标签</nav>
+    <article>内容标签</article>
+    <section>某个区域</section>
+    <aside>侧边栏标签</aside>
+    <footer>尾部标签</footer>
+    <!-- 视频 -->
+    <video src="media/mi.mp4" autoplay="autoplay" loop="loop" muted="muted" controls="controls"
+        poster="media/mi9.jpg"></video>
+    <!-- 音频 -->
+    <audio src="media/music.mp3" autoplay="autoplay" controls="controls"></audio>
+
+    <form action="">
+        <ul>
+            <li>邮箱: <input type="email"></li>
+            <li>网址: <input type="url"></li>
+            <li>日期: <input type="date"></li>
+            <li>时间: <input type="time"></li>
+            <li>数量: <input type="number"></li>
+            <li>手机号码: <input type="tel"></li>
+            <li>搜索: <input type="search"></li>
+            <li>颜色: <input type="color"></li>
+            <!-- 当我们点击提交按钮就可以验证表单了 -->
+            <li> <input type="submit" value="提交"></li>
+        </ul>
+    </form>
+
+    <form action="">
+        <input type="search" name="search" required="required" placeholder="pink" autofocus="autofocus">
+        <input type="submit" value="提交">
+        <input type="file" multiple="multiple">
+    </form>
+</body>
+
+</html>
+<!-- https://www.runoob.com/ 学习网址 -->

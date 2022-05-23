@@ -1,0 +1,87 @@
+<!--
+ * @Author: your name
+ * @Date: 2022-04-13 22:09:56
+ * @LastEditTime: 2022-04-13 23:22:57
+ * @LastEditors: Please set LastEditors
+ * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @FilePath: \work1\cssday7\test1.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>鼠标样式，去除轮廓，图片中线对其，文本溢出省略号显示</title>
+    <style>
+        input {
+            /* 去除轮廓线 */
+            outline: none;
+        }
+
+        textarea {
+            /* 文本域禁止拖动 */
+            resize: none;
+        }
+
+        /* 图片居中对齐，图片默认是基线对齐baseline，所以直接使用图片会有底部留白 */
+        img {
+            vertical-align: middle;
+        }
+
+        /* 文本溢出时，显示省略号 */
+        .box1 {
+            width: 150px;
+            height: 80px;
+            background-color: pink;
+            /* 文本显示不开，强制文本一横显示 */
+            white-space: nowrap;
+            /* 超出部分隐藏 */
+            overflow: hidden;
+            /* 文字用省略号替代超出的部分 */
+            text-overflow: ellipsis;
+        }
+
+        .box2 {
+            width: 150px;
+            height: 80px;
+            background-color: pink;
+            /* 超出部分隐藏 */
+            overflow: hidden;
+            /* 文字用省略号替代超出的部分 */
+            text-overflow: ellipsis;
+            /* 弹性伸缩盒子模型 */
+            display: -webkit-box;
+            /* 限制在一个块元素显示的文本行数 */
+            -webkit-line-clamp: 2;
+            /* 设置或检索伸缩盒子对象的子元素的排列方式 */
+            -webkit-box-orient: vertical;
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li style="cursor: default;list-style: none;">我是默认的小白鼠标样式</li>
+        <li style="cursor: pointer;">我是鼠标小手样式</li>
+        <li style="cursor: move;">我是鼠标移动样式</li>
+        <li style="cursor: text;">我是鼠标文本样式</li>
+        <li style="cursor: not-allowed;">我是鼠标禁止样式</li>
+    </ul>
+    <div>
+        <input type="text">
+        <textarea name="" id="" cols="30" rows="10"></textarea>
+    </div>
+    <img src="images/ldh.jpg" title="鼠标移动到上面显示文字">刘德华
+    <div class="box1">
+        1111111111111111111111111111111
+    </div>
+    <div class="box2">
+        <p>发生神模式了发生神模式了发生神模式了哈哈
+        </p>
+    </div>
+</body>
+
+
+</html>

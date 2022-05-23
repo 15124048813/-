@@ -1,0 +1,152 @@
+<!--
+ * @Author: chengming 531808375@qq.com
+ * @Date: 2022-05-11 23:42:07
+ * @LastEditors: chengming 531808375@qq.com
+ * @LastEditTime: 2022-05-12 20:01:19
+ * @FilePath: \work1\cssday10\test1.html
+ * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css3动画</title>
+    <style>
+        /* 定义动画 */
+        @keyframes move {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(1000px) rotate(360deg) scale(0.5);
+                background-color: red;
+            }
+        }
+
+        .box {
+            margin: 100px;
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            transform-origin: right bottom;
+            /* 调用动画 */
+            animation-name: move;
+            /* 持续时间 */
+            animation-duration: 3s;
+            /* 速度曲线默认是ease */
+            animation-timing-function: ease;
+            /* 动画何时开始默认是0 */
+            animation-delay: 0;
+            /* 动画播放次数默认是1  infinite无限重复 */
+            animation-iteration-count: infinite;
+            /* 是否反向播放默认norma了，反向播放alternate;*/
+            animation-direction: alternate;
+            /* 规定动画是否在运行或停下来 */
+            animation-play-state: running;
+            /* 动画结束后回到初始backwords 或停在结束forwards */
+            animation-fill-mode: forwards;
+        }
+
+        .box:hover {
+            /* 鼠标经过div，停止动画 */
+            animation-play-state: paused;
+        }
+
+
+
+        .city {
+            position: relative;
+            color: #fff;
+        }
+
+        .dotted {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #09f;
+            border-radius: 50%;
+        }
+
+        .city div[class^='pulse'] {
+            position: absolute;
+            /* 水平垂直居中 */
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 8px;
+            height: 8px;
+            box-shadow: 0 0 12px #009dfd;
+            border-radius: 50%;
+            animation: pulse 1.5s linear infinite;
+        }
+
+        .city div.pulse2 {
+            animation-delay: 0.4s;
+        }
+
+        .city div.pulse3 {
+            animation-delay: 0.8s;
+        }
+
+        @keyframes pulse {
+            0% {}
+
+            70% {
+                width: 40px;
+                height: 40px;
+                opacity: 1;
+            }
+
+            100% {
+                width: 70px;
+                height: 70px;
+                opacity: 0;
+            }
+        }
+
+        /* steps步长显示  分成几步完成动画*/
+        .box1 {
+            overflow: hidden;
+            font-size: 20px;
+            width: 0;
+            height: 30px;
+            background-color: skyblue;
+            /* 让文字强制一行显示 */
+            white-space: nowrap;
+            animation: w 4s steps(10) forwards;
+        }
+
+        @keyframes w {
+            0% {
+                width: 0;
+            }
+
+            100% {
+                width: 200px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+
+    <div class="city">
+        <div class="dotted"></div>
+        <div class="pulse1"></div>
+        <div class="pulse2"></div>
+        <div class="pulse3"></div>
+    </div>
+
+    <!-- steps步长 -->
+    <div class="box1">世纪佳缘我在这里等你</div>
+</body>
+
+</html>

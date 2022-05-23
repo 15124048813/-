@@ -1,0 +1,64 @@
+<!--
+ * @Author: your name
+ * @Date: 2022-04-12 20:00:19
+ * @LastEditTime: 2022-04-13 20:10:45
+ * @LastEditors: Please set LastEditors
+ * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @FilePath: \work1\cssday6\tudoutest.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>土豆焦点图</title>
+    <style>
+        .tudou {
+            position: relative;
+            width: 444px;
+            height: 320px;
+            background-color: pink;
+            margin: 30px auto;
+        }
+
+        .tudou>img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .mask {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: rgb(0, 0, 0, 0.3);
+            visibility: hidden;
+        }
+
+        .mask img {
+            position: absolute;
+            top: 50%;
+            margin-top: -20px;
+            margin-left: -20px;
+            left: 50%;
+        }
+
+        .tudou:hover .mask {
+            visibility: visible;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="tudou">
+        <div class="mask">
+            <a href="">
+                <img src="images/arr.png" alt="">
+            </a>
+        </div>
+        <img src="images/tudou.jpg" alt="">
+    </div>
+</body>
+
+</html>

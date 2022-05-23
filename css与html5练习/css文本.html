@@ -1,0 +1,72 @@
+<!--
+ * @Author: your name
+ * @Date: 2022-03-30 16:50:03
+ * @LastEditTime: 2022-03-30 22:51:28
+ * @LastEditors: Please set LastEditors
+ * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @FilePath: \work1\csstest.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+    <p class="typeface">有点东西</p>
+    <div class="red font"> 12346</div>
+    <div class="red">红色</div>
+    <div class="green">绿色</div>
+    <div class="red" id="black">红色</div>
+</body>
+</html>
+
+<style>
+p {
+    /* 缩进    2em表示缩进两个字的距离，相对大小*/
+    text-indent: 50px;
+    color: red;
+    font-size: 12px;/*文字大小*/
+    /* 行高 */
+    line-height: 40px;
+}
+.red {
+    height: 100px;
+    width: 100px;
+    background-color: red;
+}
+.font{
+    font-size: 25;
+    color: blue;
+}
+.green {
+    height: 100px;
+    width: 100px;
+    background-color: green;
+}
+
+/* #开头为id选择器只能使用一次，不能多次调用 */
+#black {
+    color: pink;
+}
+
+.typeface {
+    font-family: '微软雅黑';
+    /* 可以再body中设置文字大小，标题需要独自设置 */
+    font-weight: bold;
+    /* 倾斜、正常 */
+    font-style: normal;
+    /* font: font-style font-weight ont-size font-family; 复合属性 前两个可以简写 后两个必须写 */
+    /* font: italic 700 15px '微软雅黑'; */
+    color: rgb(255, 136, 0);
+    text-align: center;
+    text-decoration: overline;
+
+}
+
+
+
+</style>

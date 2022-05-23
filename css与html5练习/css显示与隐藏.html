@@ -1,0 +1,73 @@
+<!--
+ * @Author: your name
+ * @Date: 2022-04-12 19:34:53
+ * @LastEditTime: 2022-04-13 20:10:55
+ * @LastEditors: Please set LastEditors
+ * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @FilePath: \work1\cssday6\xianshiyincang.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>显示与隐藏</title>
+    <style>
+        /* display隐藏元素后位置也不再占有 ，用处最多*/
+        .peppa {
+            display: none;
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+
+        .george {
+            width: 200px;
+            height: 200px;
+            background-color: skyblue;
+        }
+
+        /* visibility: hidden;隐藏后继续保留原来的位置 ,visible值显示*/
+        .father {
+            visibility: hidden;
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+
+        .mather {
+            width: 200px;
+            height: 200px;
+            background-color: skyblue;
+        }
+
+        /* overflow隐藏多余出的文字 */
+        /* visible 默认值。内容不会被修剪，会呈现在元素框之外。 
+        hidden 内容会被修剪，并且其余内容是不可见的。 
+        scroll 内容会被修剪，但是浏览器会显示滚动条以便查看其余的内容。 
+        auto 如果内容被修剪，则浏览器会显示滚动条以便查看其余的内容。 
+        inherit 规定应该从父元素继承 overflow 属性的值。 
+         */
+        .peppa0 {
+            overflow: auto;
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            margin: 100px auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="peppa">11</div>
+    <div class="george">22</div>
+    <div class="father">fa</div>
+    <div class="mather">ma</div>
+    <div class="peppa0">1111111111111111111
+        1111111111111111111111111
+    </div>
+</body>
+
+</html>

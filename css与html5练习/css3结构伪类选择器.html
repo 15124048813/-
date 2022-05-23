@@ -1,0 +1,73 @@
+<!--
+ * @Author: your name
+ * @Date: 2022-04-17 20:18:52
+ * @LastEditTime: 2022-04-17 20:39:21
+ * @LastEditors: Please set LastEditors
+ * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @FilePath: \work1\cssday8\test1.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css3新增结构伪类选择器</title>
+    <style>
+        /* 第一个 */
+        ul li:first-child {
+            background-color: pink;
+        }
+
+        /* 最后一个 */
+        ul li:last-child {
+            background-color: red;
+        }
+
+        /* 第五个 */
+        ul li:nth-child(5) {
+            background-color: skyblue;
+        }
+
+        /* 偶数even 奇数odd  选择所有n*/
+        ul li:nth-child(even) {
+            background-color: antiquewhite;
+        }
+
+        ul li:nth-child(odd) {
+            background-color: blueviolet;
+        }
+
+        /* 可以填写公式 */
+        ul li:nth-child(-n+3) {
+            background-color: brown;
+
+        }
+
+        /* E:first-of-tyoe制定类型E的第一个 */
+        section div:nth-of-type(1) {
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+        <li>7</li>
+        <li>8</li>
+    </ul>
+    <section>
+        <p>1</p>
+        <div>2</div>
+        <div>3</div>
+    </section>
+</body>
+
+</html>

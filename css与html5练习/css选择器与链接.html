@@ -1,0 +1,167 @@
+<!--
+ * @Author: your name
+ * @Date: 2022-03-30 23:02:17
+ * @LastEditTime: 2022-05-23 17:21:34
+ * @LastEditors: chengming 531808375@qq.com
+ * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @FilePath: \work1\cssday2\test.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>选择器与链接</title>
+    <style>
+        .one {
+            text-decoration: none;
+            height: 10px;
+        }
+
+        /* 后代选择器 */
+        ol li {
+            color: aqua;
+        }
+
+        /* ol li a {
+            color: red;
+        } */
+
+        /* 子代元素选择器只选择下一级*/
+        .nav>a {
+            color: bisque;
+        }
+
+        /* 并集选择器 */
+        div,
+        p,
+        .name li {
+            color: blue;
+        }
+
+        /* 连接伪类选择器  链接样式需要单独制定不受父类影响
+        link未被访问的连接 */
+        a:link {
+            color: #333;
+            text-decoration: none;
+        }
+
+        /* 访问过的连接 */
+        a:visited {
+            color: orange;
+        }
+
+        /* 鼠标经过 */
+        a:hover {
+            color: skyblue;
+        }
+
+        /* 鼠标按下未松开 */
+        a:active {
+            color: green;
+        }
+
+
+        /* 获得光标的input表单取出主要针对input类表单元素 */
+        input:focus {
+            background-color: blueviolet;
+        }
+
+        /* a {
+            width: 152px;
+            height: 50px;
+            行内元素转换为块元素 */
+        /* display: block;
+            块级元素转换为行内元素
+            display:inline
+            转为行内块元素 display:inline-block
+        } */
+
+
+        h3 {
+            width: 118px;
+            height: 40px;
+            background-color: pink;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 40px;
+            /* background-image: url(../bell.png); */
+            background-repeat: no-repeat;
+            background-position: left;
+            text-indent: 1.5em;
+        }
+
+        /* 背景图片 */
+        body {
+            background-repeat: no-repeat;
+            background-image: url(images/bg.jpg);
+            background-position: center 40px;
+            /* fixed背景固定  scroll背景滚动 */
+            background-attachment: fixed;
+            /* background: 颜色 图片地址 平铺 背景滚动 背景图片位置; */
+        }
+
+
+        .image_transparency {
+            width: 300px;
+            height: 300px;
+
+            /* 背景颜色透明度 0.5 */
+            background: rgba(0, 0, 0, 0.5);
+        }
+    </style>
+    <link rel="stylesheet" href="">
+</head>
+
+<body>
+    <!-- 后代 -->
+    <ol>
+        <li>111111111</li>
+        <li>222<a href="#">1111</a></li>
+    </ol>
+
+    <!-- 子代 -->
+
+    <div class="nav">
+        <a href="#">123456</a>
+        <li><a href="#">112345</a></li>
+    </div>
+
+    <!-- 并集选择器 -->
+    <div>熊大</div>
+    <p>熊二</p>
+
+    <!-- 链接伪类选择 -->
+    <a href="#">小猪佩奇</a>
+    <br>
+
+    <input type="text">
+    <input type="text">
+    <input type="text">
+
+    <!-- 文字元素中不能防止块状元素 如p中不能放div-->
+    <!-- 行内元素转换为块元素 -->
+    <a href="">块级元素</a>
+
+
+    <h3>成长守护平台</h3>
+    <h3>成长守护平台</h3>
+    <h3>成长守护平台</h3>
+    <h3>成长守护平台</h3>
+    <h3>成长守护平台</h3>
+    <h3>成长守护平台</h3>
+    <h3>成长守护平台</h3>
+    <h3>成长守护平台</h3>
+    <h3>成长守护平台</h3>
+    <h3>成长守护平台</h3>
+    <h3>成长守护平台</h3>
+    <h3>成长守护平台</h3>
+    <h3>成长守护平台</h3>
+    <h3>成长守护平台</h3>
+
+    <div class="image_transparency"></div>
+</body>
+
+</html>
